@@ -1,0 +1,21 @@
+#dont upload movie files
+*.mkv
+
+#from tum_simulator gitignore
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+
+
+*.*~
