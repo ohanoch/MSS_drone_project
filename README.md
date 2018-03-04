@@ -1,14 +1,11 @@
-################################################################
-				FLYING AR-DRONE USING TAGS
-################################################################
 
-# Made by Or Hanoch
-# Project Manager: Shunmuga Pillay
-# Proffesional Adviser: Pravesh Ranchod
+#FLYING AR-DRONE USING TAGS
 
-------
-ABOUT
-------
+#### Made by Or Hanoch
+#### Project Manager: Shunmuga Pillay
+#### Proffesional Adviser: Pravesh Ranchod
+
+## ABOUT
 The goal of this project is to have an AR-Drone fly and obtain instructions from markers (aka tags) on the wall in order to direct it. The code is built in such a way that the movement is not hard coded, but the instruction of each tag is - thus you can change the placements of the tags on the walls and without changing the code the drone should change its movement accordingly.
 
 In order to obtain this goal we use ROS Kinetic in addition to some open-source github repositories.
@@ -16,9 +13,8 @@ Tested on Ubuntu 16.04.
 
 NOTE:
 The main package with my code is tags_instructing_drones. Other packages included here are packages which I used and may have edited slightly, thus it may be easier to just copy them from here rather than copy the original repositories and try to edit them to what I have.
-------------------------
-Preperation Instructions
-------------------------
+
+## Preperation Instructions
 It is recommended to go through the ROS tutorials and install ROS Kinetic through them:
 http://wiki.ros.org/ROS/Tutorials/
 
@@ -52,9 +48,7 @@ tum simulator - https://github.com/angelsantamaria/tum_simulator
 At this point you should compile catkin:
 `catkin_make`
 
---------------------
-Running Instructions
---------------------
+## Running Instructions
 Real Drone:
 	- Connecting to drone: 
 		`roslaunch tags_instructing_drone launch_drone.launch`
@@ -75,10 +69,7 @@ Gazeebo Simulator:
 	- Run code and create log file: 
 		rosrun tags_instructing_drone real_drone_flight.py | tee ~/catkin_ws/src/tags_instructing_drone/scripts/logs/real_drone_flight_$(date +%Y%m%d%H%M%S).log
 		
---------------
-Useful Sources
---------------
-
+## Useful Sources
 - ROS Tutorials:
 http://wiki.ros.org/ROS/Tutorials/
 
@@ -89,12 +80,8 @@ http://wiki.ros.org/tum_simulator
 https://edu.gaitech.hk/drones/ar_parrot_2/ar-parrot-2-ros.html
 
 
-
-------------
-Licenses
-------------
-This Project is released under GPL v.3 which can be found at:
-https://www.gnu.org/licenses/gpl-3.0.en.html
+## Licenses
+This Project is released under GPL v.3 which can be found in the license file.
 
 Different reposetories used in this project have different open-source licenses and should be checked in the repositories themselves. As of writing this readme file the following licenses apply:
 tum simulator: "We release our code under the BSD license. However, as we strongly build upon Gazebo and HectorSLAM, corresponding licenses apply as well. "
