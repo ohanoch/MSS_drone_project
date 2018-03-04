@@ -48,7 +48,7 @@ http://wiki.ros.org/ROS/Tutorials/
 		`rosrun image_view image_view image:=/ardrone/front/image_raw`  
 	*  Run code and create log file:  
 		`rosrun tags_instructing_drone real_drone_flight.py | tee ~/catkin_ws/src/tags_instructing_drone/scripts/logs/real_drone_flight_$(date +%Y%m%d%H%M%S).log`  
-	*  NOTE: In order to debug effectivly I found it useful to have "Simple Screen Recorder" capture the screen with the code running aswell as the drone camera image.  
+	*  NOTE: In order to debug effectivly I found it useful to have a screen capture program (like "Simple Screen Recorder") capture the screen with the code running aswell as the drone camera image.  
 	*  Kill switch in case something goes wrong:  
 		`rostopic pub -1 /ardrone/land std_msgs/Empty`
 	
@@ -59,6 +59,12 @@ http://wiki.ros.org/ROS/Tutorials/
 	*  Run code and create log file: 
 		rosrun tags_instructing_drone real_drone_flight.py | tee ~/catkin_ws/src/tags_instructing_drone/scripts/logs/real_drone_flight_$(date +%Y%m%d%H%M%S).log
 		
+## Editing code and testing
+*  You can use markerTester2.py to be able to pick up the drone and point at the tags and see the values that ar_track_alvar gives you while the drone captures the tags in different positions. To run markerTester2.py use:  
+`rosrun tags_instructing_drone markerTester2.py`
+
+*  It was convenient for me to do this while haveing the drone camera output viewed on my pc and using a screen capturing tool to see the output of markerTester2.py side by side with what the camera sees
+
 ## Useful Sources
 *  ROS Tutorials:
 http://wiki.ros.org/ROS/Tutorials/
