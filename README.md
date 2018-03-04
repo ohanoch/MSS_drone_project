@@ -3,7 +3,7 @@
 
 #### Made by Or Hanoch
 #### Project Manager: Shunmuga Pillay
-#### Proffesional Adviser: Pravesh Ranchod
+#### Professional Adviser: Pravesh Ranchod
 
 ## ABOUT
 The goal of this project is to have an AR-Drone fly and obtain instructions from markers (aka tags) on the wall in order to direct it. The code is built in such a way that the movement is not hard coded, but the instruction of each tag is - thus you can change the placements of the tags on the walls and without changing the code the drone should change its movement accordingly.
