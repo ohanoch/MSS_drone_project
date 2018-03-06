@@ -1,3 +1,6 @@
+#dont upload the logs - too heavy
+drone_application/logs/
+
 #dont upload movie files
 *.mkv
 
