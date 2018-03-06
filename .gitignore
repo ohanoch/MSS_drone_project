@@ -1,6 +1,9 @@
 #dont upload movie files
 *.mkv
 
+#dont upload swap files
+*.swp
+
 #from tum_simulator gitignore
 
 # Compiled Object files

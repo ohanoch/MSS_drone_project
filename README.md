@@ -8,7 +8,7 @@ In order to obtain this goal we use ROS Kinetic in addition to some open-source 
 Tested on Ubuntu 16.04.
 
 NOTE:
-The main package with my code is tags_instructing_drones. Other packages included here are packages which I used and may have edited slightly, thus it may be easier to just copy them from here rather than copy the original repositories and try to edit them to what I have.
+The main package with my code is drone_application. Other packages included here are packages which I used and may have edited slightly, thus it may be easier to just copy them from here rather than copy the original repositories and try to edit them to what I have.
 
 ## Preperation Instructions
 *  It is recommended to go through the ROS tutorials and install ROS Kinetic through them:
@@ -16,7 +16,7 @@ http://wiki.ros.org/ROS/Tutorials/
 
 *  After installing ROS Kinetic:
 
-	*  Put the directory `tags_instructing_drones` in `~/catkin_ws/src`.
+	*  Put the directory `drone_application` in `~/catkin_ws/src`.
 
 	*  The following repositories need to be downloaded and installed:
 	https://github.com/AutonomyLab/ardrone_autonomy  
@@ -41,27 +41,27 @@ http://wiki.ros.org/ROS/Tutorials/
 ## Running Instructions
 *  Real Drone:  
 	*  Connecting to drone:  
-		`roslaunch tags_instructing_drone launch_drone.launch`  
+		`roslaunch drone_application launch_drone.launch`  
 	*  Starting ar_track_alvar:  
-		`roslaunch tags_instructing_drone pr2_indiv_no_kinect_edited.launch`  
+		`roslaunch drone_application pr2_indiv_no_kinect_edited.launch`  
 	*  View drone camera output in real time:  
 		`rosrun image_view image_view image:=/ardrone/front/image_raw`  
 	*  Run code and create log file:  
-		`rosrun tags_instructing_drone real_drone_flight.py | tee ~/catkin_ws/src/tags_instructing_drone/scripts/logs/real_drone_flight_$(date +%Y%m%d%H%M%S).log`  
+		`rosrun drone_application real_drone_flight.py | tee ~/catkin_ws/src/drone_application/logs/real_drone_flight_$(date +%Y%m%d%H%M%S).log`  
 	*  NOTE: In order to debug effectivly I found it useful to have a screen capture program (like "Simple Screen Recorder") capture the screen with the code running aswell as the drone camera image.  
 	*  Kill switch in case something goes wrong:  
 		`rostopic pub -1 /ardrone/land std_msgs/Empty`
 	
 *  Gazeebo Simulator:  
-	*  Run simulator: roslaunch tags_instructing_drone test_simulator_tags4.launch  
+	*  Run simulator: roslaunch drone_application test_simulator_tags4.launch  
 	*  View drone camera output in real time:  
 		`rosrun image_view image_view image:=/ardrone/front/image_raw`
 	*  Run code and create log file: 
-		rosrun tags_instructing_drone real_drone_flight.py | tee ~/catkin_ws/src/tags_instructing_drone/scripts/logs/real_drone_flight_$(date +%Y%m%d%H%M%S).log
+		rosrun drone_application real_drone_flight.py | tee ~/catkin_ws/src/drone_application/logs/simulator_drone_flight_$(date +%Y%m%d%H%M%S).log
 		
 ## Editing code and testing
 *  You can use markerTester2.py to be able to pick up the drone and point at the tags and see the values that ar_track_alvar gives you while the drone captures the tags in different positions. To run markerTester2.py use:  
-`rosrun tags_instructing_drone markerTester2.py`
+`rosrun drone_application markerTester.py`
 
 *  It was convenient for me to do this while haveing the drone camera output viewed on my pc and using a screen capturing tool to see the output of markerTester2.py side by side with what the camera sees
 
@@ -85,7 +85,7 @@ Different reposetories used in this project have different open-source licenses 
 
 *  gazebo_models: Apache License
 
-*  ar_track_alvar: No exceptions have been made - thus assumed to be the default for ROS wiki - Creative Commons Attribution 3.0
+*  ar_track_alvar: LGPL-2.1
 
 *  ardrone_autonomy: BSD License
 
