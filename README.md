@@ -18,7 +18,7 @@ http://wiki.ros.org/ROS/Tutorials/
 
 	*  Put the directory `drone_application` in `~/catkin_ws/src`.
 
-	*  The following repositories need to be downloaded and installed:
+	*  The following repositories need to be downloaded and installed:  
 	https://github.com/AutonomyLab/ardrone_autonomy  
 	https://github.com/sniekum/ar_track_alvar
 		*  ardrone_autonomy installation instructions and wiki:  
