@@ -21,17 +21,28 @@ http://wiki.ros.org/ROS/Tutorials/
 	*  The following repositories need to be downloaded and installed:  
 	https://github.com/AutonomyLab/ardrone_autonomy  
 	https://github.com/sniekum/ar_track_alvar
-		*  ardrone_autonomy installation instructions and wiki:  
-		http://ardrone-autonomy.readthedocs.io/en/latest/installation.html  
-		*  ar_track_alvar installation instructions and wiki:  
-		http://wiki.ros.org/ar_track_alvar
+		*  ardrone_autonomy wiki: 
+		https://ardrone-autonomy.readthedocs.io/en/latest/  
+		*  ardrone_autonomy installation instructions:  
+		The official installation instructions do not mention kinetic, but an installation is available in the Ubuntu repos:  
+		`sudo apt-get install ros-kinetic-ardrone-autonomy`
+		*  ar_track_alvar wiki:  
+		http://wiki.ros.org/ar_track_alvar  
+		* ar_track_alvar installation instructions:  
+		The official installation instructions do not mention kinetic, but an installation is available in the Ubuntu repos:  
+		`sudo apt-get install ros-kinetic-ar-track-alvar`
 
 	*  tum simulator and gazeebo - optional:  
 	gazeebo - http://gazebosim.org/tutorials?tut=install_ubuntu&cat=install  
 	tum simulator - https://github.com/angelsantamaria/tum_simulator  
-		*  tum simulator and gazeebo installation instructions and wiki:  
-		provided in README.md of git repository aswell as http://wiki.ros.org/tum_simulator  
-			*  I added some tags to my worlds in gazeebo, as such I recommend copying my tum_simulator folder into `~/catkin_ws/src`  
+		* gazeebo installation: 
+		use "Default installation: one-liner" in:
+		http://gazebosim.org/tutorials?tut=install_ubuntu&cat=install
+		*  tum simulator and wiki (ignore installation instructions in wiki):  
+		http://wiki.ros.org/tum_simulator 
+		*  tum simulator installation instructions:  
+		Follow the installation instructions in README.md of tum_simulator git repository but: 
+			*  I added some tags to my gazeebo worlds within tum simulator, as such I recommend copying my tum_simulator folder into `~/catkin_ws/src` instead of downloading the folder from the github repository. Otherwise continue with installation instructions from README.md in the tum_simulator github repository.  
 			*  You can use the models supplied in the gazeebo_models folder to make new gazeebo worlds of your own. These came from:  
 			https://github.com/mikaelarguedas/gazebo_models
 
