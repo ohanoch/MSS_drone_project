@@ -35,9 +35,13 @@ http://wiki.ros.org/ROS/Tutorials/
 	*  tum simulator and gazeebo - optional:  
 	gazeebo - http://gazebosim.org/tutorials?tut=install_ubuntu&cat=install  
 	tum simulator - https://github.com/angelsantamaria/tum_simulator  
-		* gazeebo installation: 
-		use "Default installation: one-liner" in:
-		http://gazebosim.org/tutorials?tut=install_ubuntu&cat=install
+		* gazeebo installation:  
+		We install gazeebo 7 as the hector quad-copter requires that version.  
+		`sudo apt-get install libsdformat4`  
+		`sudo apt-get install gazebo`  
+		You may also need to upgrade after this in order to have gazebo working (I don't know why, but I had to):  
+		`sudo apt-get upgrade`
+		
 		*  tum simulator and wiki (ignore installation instructions in wiki):  
 		http://wiki.ros.org/tum_simulator 
 		*  tum simulator installation instructions:  
@@ -64,7 +68,8 @@ http://wiki.ros.org/ROS/Tutorials/
 		`rostopic pub -1 /ardrone/land std_msgs/Empty`
 	
 *  Gazeebo Simulator:  
-	*  Run simulator: roslaunch drone_application test_simulator_tags4.launch  
+	*  Run simulator:  
+		`roslaunch drone_application test_simulator_tags4.launch`  
 	*  View drone camera output in real time:  
 		`rosrun image_view image_view image:=/ardrone/front/image_raw`
 	*  Run code and create log file: 
