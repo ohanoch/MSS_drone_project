@@ -79,6 +79,8 @@ http://wiki.ros.org/ROS/Tutorials/
 		`roslaunch drone_application test_simulator_tags4.launch`  
 	*  View drone camera output in real time:  
 		`rosrun image_view image_view image:=/ardrone/front/image_raw`
+	* Starting ar_track_alvar:  
+		`roslaunch drone_application pr2_indiv_no_kinect_edited.launch`  
 	*  Run code and create log file:  
 		`rosrun drone_application real_drone_flight.py | tee ~/catkin_ws/src/drone_application/logs/simulator_drone_flight_$(date +%Y%m%d%H%M%S).log`
 		
