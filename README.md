@@ -41,12 +41,20 @@ http://wiki.ros.org/ROS/Tutorials/
 		`sudo apt-get install gazebo`  
 		You may also need to upgrade after this in order to have gazebo working (I don't know why, but I had to):  
 		`sudo apt-get upgrade`
-		
 		*  tum simulator and wiki (ignore installation instructions in wiki):  
 		http://wiki.ros.org/tum_simulator 
-		*  tum simulator installation instructions:  
-		Follow the installation instructions in README.md of tum_simulator git repository but: 
-			*  I added some tags to my gazeebo worlds within tum simulator, as such I recommend copying my tum_simulator folder into `~/catkin_ws/src` instead of downloading the folder from the github repository. Otherwise continue with installation instructions from README.md in the tum_simulator github repository.  
+		*  tum simulator installation instructions: 
+			* Dependencies:  
+				*Hector quadrotor: As an example you can install all hector suite running  
+				`sudo apt-get install ros-<your_version>-hector-*`
+				* Pre-mentioned ardrone autonomy
+			*  I added some tags to my gazeebo worlds within tum simulator, as such I recommend copying my tum_simulator folder into `~/catkin_ws/src` instead of downloading the folder from the github repository.  
+			* In order for the markers to appear in the worlds I created you will need to download the following repository:  
+			https://github.com/mikaelarguedas/gazebo_models  
+			and install it using the following command from inside the folder "gazebo_models/ar_tags/scripts":  
+			`mkdir ~/.gazeebo/models/marker0`
+			`./generate_markers_model.py -i ../images/ -g ~/.gazebo/models -s 20`  
+			 NOTE: For details look at the README.md of the gazebo_models repository.
 			*  You can use the models supplied in the gazeebo_models folder to make new gazeebo worlds of your own. These came from:  
 			https://github.com/mikaelarguedas/gazebo_models
 
@@ -106,6 +114,7 @@ Different reposetories used in this project have different open-source licenses 
 *  ardrone_autonomy: BSD License
 
 ## Credits
+Developed originally for the University of the Witwatersrand, South Africa
 Made by Or Hanoch  
 Project Manager: Shunmuga Pillay  
 Professional Adviser: Pravesh Ranchod
