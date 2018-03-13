@@ -748,10 +748,10 @@
       <pose frame=''>11 3 0 0 -0 0</pose>
     </model>
     <state world_name='default'>
-      <sim_time>817 228000000</sim_time>
-      <real_time>159 94149961</real_time>
-      <wall_time>1505813929 728293629</wall_time>
-      <iterations>157493</iterations>
+      <sim_time>1240 770000000</sim_time>
+      <real_time>31 868366977</real_time>
+      <wall_time>1508740349 133027916</wall_time>
+      <iterations>31100</iterations>
       <model name='House 1'>
         <pose frame=''>-4.18156 -5.60557 0 0 -0 3.12318</pose>
         <scale>1 1 1</scale>
@@ -782,11 +782,31 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='Marker0_0'>
-        <pose frame=''>6 2 2 0 -0 0</pose>
+      <model name='Marker0'>
+        <pose frame=''>2 0 2 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>6 2 2 0 -0 0</pose>
+          <pose frame=''>2 0 2 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Marker1'>
+        <pose frame=''>2 4 0.5 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>2 4 0.5 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Marker2'>
+        <pose frame=''>2 4 2 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>2 4 2 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -873,13 +893,13 @@
         </link>
       </model>
       <model name='quadrotor'>
-        <pose frame=''>-2.5e-05 -8e-06 0.04 0 0 -3e-06</pose>
+        <pose frame=''>-1.6e-05 -2.3e-05 0.04 0 0 -7.4e-05</pose>
         <scale>1 1 1</scale>
         <link name='base_link'>
-          <pose frame=''>-2.5e-05 -8e-06 0.04 0 0 -3e-06</pose>
-          <velocity>-0.001639 1e-06 0.005903 -9e-06 -0.040973 -2e-06</velocity>
-          <acceleration>-5.60821 0.00105 6.35404 3.12361 -1.43834 3.14039</acceleration>
-          <wrench>-8.41231 0.001576 9.53106 0 -0 0</wrench>
+          <pose frame=''>-1.6e-05 -2.3e-05 0.04 0 0 -7.4e-05</pose>
+          <velocity>-0.001639 1e-06 0.005903 -1.2e-05 -0.040973 -2e-06</velocity>
+          <acceleration>-5.60821 0.001451 6.35404 3.11416 -1.43834 3.1404</acceleration>
+          <wrench>-8.41231 0.002177 9.53106 0 -0 0</wrench>
         </link>
       </model>
       <light name='sun'>
@@ -888,7 +908,7 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose frame=''>-1.83061 1.09831 4.03551 1.4e-05 0.515286 0.11317</pose>
+        <pose frame=''>-9.3765 7.68715 6.9771 -0.001414 0.253541 -0.326804</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -1303,7 +1323,7 @@
       </plugin>
       <pose frame=''>0 0 0.5 0 -0 0</pose>
     </model>
-    <model name='Marker0_0'>
+    <model name='Marker0'>
       <static>1</static>
       <link name='link'>
         <visual name='visual'>
@@ -1318,7 +1338,41 @@
         <kinematic>0</kinematic>
         <gravity>1</gravity>
       </link>
-      <pose frame=''>3 2.55467 0 0 -0 0</pose>
+      <pose frame=''>2.89372 0.17787 0 0 -0 0</pose>
+    </model>
+    <model name='Marker2'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://marker2/meshes/Marker2.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>2.9574 2.63698 0 0 -0 0</pose>
+    </model>
+    <model name='Marker1'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://marker1/meshes/Marker1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>0.391286 4.30262 0 0 -0 0</pose>
     </model>
   </world>
 </sdf>
