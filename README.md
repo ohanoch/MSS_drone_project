@@ -52,11 +52,10 @@ http://wiki.ros.org/ROS/Tutorials/
 			* In order for the markers to appear in the worlds I created you will need to download the following repository:  
 			https://github.com/mikaelarguedas/gazebo_models  
 			and install it using the following command from inside the folder "gazebo_models/ar_tags/scripts":  
-			`mkdir ~/.gazeebo/models/marker0`
+			`mv <path_to_repo_directory>/gazebo_models/model/model0 ~/.gazeebo/models/marker0`
 			`./generate_markers_model.py -i ../images/ -g ~/.gazebo/models -s 20`  
 			 NOTE: For details look at the README.md of the gazebo_models repository.
-			*  You can use the models supplied in the gazeebo_models folder to make new gazeebo worlds of your own. These came from:  
-			https://github.com/mikaelarguedas/gazebo_models
+			*  You can use the models supplied in the gazeebo_models repository to make new gazeebo worlds of your own.
 
 *  At this point you should compile catkin:  
 `catkin_make`
