@@ -76,13 +76,13 @@ http://wiki.ros.org/ROS/Tutorials/
 	
 *  Gazeebo Simulator:  
 	*  Run simulator:  
-		`roslaunch drone_application test_simulator_tags4.launch`  
+		`roslaunch drone_application test_simulator_tags.launch`  
 	*  View drone camera output in real time:  
 		`rosrun image_view image_view image:=/ardrone/front/image_raw`
 	* Starting ar_track_alvar:  
 		`roslaunch drone_application pr2_indiv_no_kinect_edited.launch`  
 	*  Run code and create log file:  
-		`rosrun drone_application real_drone_flight.py | tee ~/catkin_ws/src/drone_application/logs/simulator_drone_flight_$(date +%Y%m%d%H%M%S).log`
+		`rosrun drone_application simulator_drone_flight.py | tee ~/catkin_ws/src/drone_application/logs/simulator_drone_flight_$(date +%Y%m%d%H%M%S).log`
 		
 ## Editing code and testing
 *  You can use markerTester2.py to be able to pick up the drone and point at the tags and see the values that ar_track_alvar gives you while the drone captures the tags in different positions. To run markerTester2.py use:  
