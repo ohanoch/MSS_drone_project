@@ -9,30 +9,8 @@
 
 # Tested using ROS-Kinetic and an Parrot AR-Drone2
 
-# Used the Ros tutorials to learn how to do this
-# http://wiki.ros.org/ROS/Tutorials/
-
-# Needs to be run in cunjunction with the following repositories:
-# https://github.com/AutonomyLab/ardrone_autonomy
-# https://github.com/sniekum/ar_track_alvar
-
-# Notice the following files have been changed/added
-# ar_track_alvar/launch/pr2_indiv_no_kinect_edited.launch
-# drone_application/launch/launch_drone.launch
-
-# Commands I used to run with real drone:
-# connect to drone - `roslaunch drone_application launch_drone.launch`
-# start tag tracking topic - `roslaunch ar_track_alvar pr2_indiv_no_kinect_edited.launch`
-# view drone camera output in real time - `rosrun image_view image_view image:=/ardrone/front/image_raw`
-# run the code and log the output - `rosrun drone_application real_drone_flight.py | tee real_drone_flight_$(date +%Y%m%d%H%M%S).log`
-
-# In order to run in gazeebo the following repository is needed:
-# https://github.com/angelsantamaria/tum_simulator/tree/master/cvg_sim_gazebo
-
-# Notice the following files have been edited/changed in gazeebo repository
-# tum_simulator/cvg_sim_gazebo/worlds/ardrone_testworld_tags4.world
-
-# Can be run in gazeebo using - `roslaunch drone_application test_simulator_tags4.launch`
+# For more information and running instructions see the README.md at:
+# https://github.com/ohanoch/MSS_drone_project
 
 
 # importing ros messages
@@ -347,6 +325,10 @@ def tag_detected(data):
 
     print ("drone1.curr_tags" + str(drone1.curr_tags) + " detected_tag: " +str(detected_tag))
 
+    if not (drone1.curr_tags[0] == TAGS["empty"].value or drone1.curr_tags[0] == detected_tag):
+        print("detected tag that is not the one being centered on - exiting function.")
+        return
+
     # Make sure that drone does not re-detect the tag it just got new directions from
     # and thus center back on it instead of moving to next tag
     if drone1.curr_tags[1] == detected_tag:
@@ -408,9 +390,8 @@ def tag_detected(data):
 
         # The current tag we are locked on for centering is either empty (i,e, a new tag)
         # or the tag that we are detecting currently
-        if drone1.curr_tags[0] == TAGS["empty"].value or drone1.curr_tags[0] == detected_tag:
-            drone1.center_tag(
-                data.pose.position.x, data.pose.position.y, data.pose.position.z, curr_pitch, detected_tag)
+        drone1.center_tag(
+            data.pose.position.x, data.pose.position.y, data.pose.position.z, curr_pitch, detected_tag)
 
     # combat gravity
     if drone1.v_direction == 0:
