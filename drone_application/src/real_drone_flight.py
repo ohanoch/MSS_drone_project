@@ -29,6 +29,41 @@ import time
 import datetime
 import sys
 
+# Globals
+
+# used in rospy.sleep to measure Hz of ros loop.
+# 30Hz is what AR-Drone2 declares as the rate it subscribes to topics when connecting to it
+RATE_CONST = 30
+
+# PID constants
+# used following link to help understand how to tune them:
+# https://electronics.stackexchange.com/questions/127524/how-to-calculate-kp-kd-and-ki
+Kp = 1
+Ki = 0
+Kd = 0.05
+
+# Speed variables to be given at certain points.
+# NOTE: Up and Down need specific speeds - presumably because of gravity
+GENERAL_SPEED = 0.03  #
+UP_SPEED = 0.12  # speeds for general movement between tags
+DOWN_SPEED = 0.25  #
+GENERAL_CENTERING_SPEED = 0.025  #
+UP_CENTERING_SPEED = 0.07  # speeds for when drone is centering on a tag
+DOWN_CENTERING_SPEED = 0.025  #
+
+GRAVITY_CONST = 0.02  # speed to maintain height and fight gravity. might not be necessary.
+
+# variables that determine the leaniancy of when the drone is concidered "centered" on a tag
+X_CENTER = 0.03  # leaniancy for left and right
+Y_CENTER = 0.03  # leaniancy for up and down
+Z_CENTER_CLOSE = 0.28  # leaniancy for being too close to the wall
+Z_CENTER_FAR = 0.38  # leaniancy for being too far from the wall
+ROLL_CENTER = 300  # roll is flipping forward and backwards. roll cant be recognized thus large number is given  to make it always within range
+PITCH_CENTER = 0.15  # pitch is twisting side to side. pitch between -1.2 and 1.2 centered at 0.0
+YAW_CENTER = 300  # yaw is flipping left and right. abs(pi) = good yaw, upside down = 0. drone automatically fixes yaw thus large number is given to make it always within range
+
+# Other Globals
+TIME_UNTILL_LOST = 3  # determines amount of time that drone can try to center while it does not see a tag before it is considered lost
 
 # Class for keeping drone properties
 class Drone:
@@ -230,29 +265,6 @@ class Pid:
         return final_movement
 
 
-# Globals
-
-# used in rospy.sleep to measure Hz of ros loop.
-# 30Hz is what AR-Drone2 declares as the rate it subscribes to topics when connecting to it
-RATE_CONST = 30
-
-# PID constants
-# used following link to help understand how to tune them:
-# https://electronics.stackexchange.com/questions/127524/how-to-calculate-kp-kd-and-ki
-Kp = 1
-Ki = 0
-Kd = 0.05
-
-# Speed variables to be given at certain points.
-# NOTE: Up and Down need specific speeds - presumably because of gravity
-GENERAL_SPEED = 0.03  #
-UP_SPEED = 0.12  # speeds for general movement between tags
-DOWN_SPEED = 0.25  #
-GENERAL_CENTERING_SPEED = 0.025  #
-UP_CENTERING_SPEED = 0.07  # speeds for when drone is centering on a tag
-DOWN_CENTERING_SPEED = 0.025  #
-
-GRAVITY_CONST = 0.02  # speed to maintain height and fight gravity. might not be necessary.
 
 # tag variables
 TAGS = {"up": Tag([0.5, 0.5, 0], 0.7, "y", [UP_SPEED, 0, 0, 0, 0, 0]),
@@ -262,17 +274,6 @@ TAGS = {"up": Tag([0.5, 0.5, 0], 0.7, "y", [UP_SPEED, 0, 0, 0, 0, 0]),
         "land": Tag([0, 0.5, 0.5], 999, "none", [0, 0, 0, 0, 0, 0]),
         "empty": Tag([-1, -1, -1], 999, "none", [0, 0, 0, 0, 0, 0])}
 
-# variables that determine the leaniancy of when the drone is concidered "centered" on a tag
-X_CENTER = 0.03  # leaniancy for left and right
-Y_CENTER = 0.03  # leaniancy for up and down
-Z_CENTER_CLOSE = 0.28  # leaniancy for being too close to the wall
-Z_CENTER_FAR = 0.38  # leaniancy for being too far from the wall
-ROLL_CENTER = 300  # roll is flipping forward and backwards. roll cant be recognized thus large number is given  to make it always within range
-PITCH_CENTER = 0.15  # pitch is twisting side to side. pitch between -1.2 and 1.2 centered at 0.0
-YAW_CENTER = 300  # yaw is flipping left and right. abs(pi) = good yaw, upside down = 0. drone automatically fixes yaw thus large number is given to make it always within range
-
-# Other Globals
-TIME_UNTILL_LOST = 3  # determines amount of time that drone can try to center while it does not see a tag before it is considered lost
 
 drone1 = Drone()
 
