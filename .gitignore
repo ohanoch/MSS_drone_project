@@ -2,7 +2,9 @@
 drone_application/logs/
 
 #dont upload movie files
+flight_videos/
 *.mkv
+*.mp4
 
 #dont upload swap files
 *.swp
