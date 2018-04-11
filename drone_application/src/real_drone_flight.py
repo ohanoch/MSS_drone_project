@@ -12,7 +12,6 @@
 # For more information and running instructions see the README.md at:
 # https://github.com/ohanoch/MSS_drone_project
 
-
 # importing ros messages
 from std_msgs.msg import Empty
 import rospy
@@ -69,13 +68,13 @@ TIME_UNTILL_LOST = 3  # determines amount of time that drone can try to center w
 class Drone:
     def __init__(self):
         # Current drone movement speed variables
-        self.v_direction = 0  # vertival direction (up down) up = 1, down = -1
-        self.h_direction = 0  # horizontal direction (left right) left = 1, right = -1
-        self.f_direction = 0  # forward direction (forward backward)
-        self.roll = 0  # forward/backward flip
-        self.pitch = 0  # side to side swivle
-        self.yaw = 0  # left/right flip
-        self.land = False  # Checks if a command to land has been given
+		self.v_direction = 0  # vertival direction (up down) up = 1, down = -1
+		self.h_direction = 0  # horizontal direction (left right) left = 1, right = -1
+		self.f_direction = 0  # forward direction (forward backward)
+		self.roll = 0  # forward/backward flip
+		self.pitch = 0  # side to side swivle
+		self.yaw = 0  # left/right flip
+		self.land = False  # Checks if a command to land has been given
 
         # Marker detected history variable. [0] - current marker being locked and centered on, [1] - last marker viewed, [2] - before last marker viewed, ...
         self.curr_tags = [TAGS["empty"].value for i in range(4)]

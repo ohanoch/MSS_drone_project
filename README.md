@@ -91,6 +91,12 @@ http://wiki.ros.org/ROS/Tutorials/
 
 *  It was convenient for me to do this while haveing the drone camera output viewed on my pc and using a screen capturing tool to see the output of markerTester2.py side by side with what the camera sees
 
+## Known Bugs
+*  When running using the simulator there is a problem detecting the second tag while directly in front of it. The tag will be detected when it is on the edges of the screen and will center, but once centered it will not detect it and thus infinitly try go back and forth and try centereing.  
+
+*  Differences between simulator and real drone code:
+	*  drone lost time
+
 ## Useful Sources
 *  ROS Tutorials:
 http://wiki.ros.org/ROS/Tutorials/
