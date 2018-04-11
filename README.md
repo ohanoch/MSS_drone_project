@@ -107,6 +107,15 @@ http://wiki.ros.org/tum_simulator
 *  Launch file came from:
 https://edu.gaitech.hk/drones/ar_parrot_2/ar-parrot-2-ros.html
 
+## Videos of it running
+Drone perspective alongside code running:  
+https://www.youtube.com/watch?v=PMgIAw5WZq8&index=1&list=PL2RVYZOGYIsGPELqET1A5bkZApC9eahHd
+
+3rd person view:  
+https://www.youtube.com/watch?v=pFPWGxRW1jI&list=PL2RVYZOGYIsGPELqET1A5bkZApC9eahHd&index=2
+
+Playlist:  
+https://www.youtube.com/watch?v=PMgIAw5WZq8&list=PL2RVYZOGYIsGPELqET1A5bkZApC9eahHd
 
 ## Licenses
 This Project is released under GPL v.3 which can be found in the license file.
