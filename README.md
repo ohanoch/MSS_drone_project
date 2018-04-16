@@ -52,9 +52,7 @@ http://wiki.ros.org/ROS/Tutorials/
 			* In order for the markers to appear in the worlds I created you will need to download the following repository:  
 			https://github.com/mikaelarguedas/gazebo_models  
 			and install it using the following command from inside the folder "gazebo_models/ar_tags/scripts":  
-			`mv <path_to_repo_directory>/gazebo_models/model/model0 ~/.gazeebo/models/marker0`  
 			`python generate_markers_model.py -i <path_to_repo_directory>/gazebo_models/images/ -g ~/.gazebo/models -s 20`  
-			NOTICE: A pull request has been issued to put the mv command inside the python script, and may have beem accepted since.  
 			NOTE: For details look at the README.md of the gazebo_models repository.
 			*  You can use the models supplied in the gazeebo_models repository to make new gazeebo worlds of your own.
 
