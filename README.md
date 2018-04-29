@@ -72,7 +72,10 @@ http://wiki.ros.org/ROS/Tutorials/
 	*  NOTE: In order to debug effectivly I found it useful to have a screen capture program (like "Simple Screen Recorder") capture the screen with the code running aswell as the drone camera image.  
 	*  Kill switch in case something goes wrong:  
 		`rostopic pub -1 /ardrone/land std_msgs/Empty`
-	
+	*  You might also need to reset and recallibrate your drone after a flight. This can be done by running when the drone is on a flat surface:
+		`rosservice call /ardrone/flattrim`
+		`rostopic pub -1 /ardrone/reset std_msgs/Empty`
+
 *  Gazeebo Simulator:  
 	*  Run simulator:  
 		`roslaunch drone_application test_simulator_tags.launch`  
