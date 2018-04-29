@@ -73,7 +73,7 @@ http://wiki.ros.org/ROS/Tutorials/
 	*  Kill switch in case something goes wrong:  
 		`rostopic pub -1 /ardrone/land std_msgs/Empty`
 	*  You might also need to reset and recallibrate your drone after a flight. This can be done by running when the drone is on a flat surface:  
-		`rosservice call /ardrone/flattrim`
+		`rosservice call /ardrone/flattrim`  
 		`rostopic pub -1 /ardrone/reset std_msgs/Empty`
 
 *  Gazeebo Simulator:  
